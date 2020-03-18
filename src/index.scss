@@ -1,0 +1,28 @@
+@import url('~bootstrap/dist/css/bootstrap.min.css');
+
+body{
+  background-color: #121212;
+  color: #eeeeee;
+}
+
+.App{
+  padding: 200px 0;
+
+  @media screen and (max-width: 500px) {
+    padding: 80px 0;
+  }
+
+  @media screen and (min-width:501px) and (max-width: 991px) {
+    padding: 120px 0;
+  }
+}
+
+.stats-block{
+  background-color: #1C1C1D;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.mtn-30{
+  margin-top: -30px;
+}
