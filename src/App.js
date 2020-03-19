@@ -3,9 +3,9 @@ import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Coronavirus from './Components/Coronavirus'
 const App = ()=>{
   return(
-    <Router basename='corona'>
+    <Router>
       <Switch>
-        <Route exact path="/" component={Coronavirus} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={Coronavirus} />
       </Switch>
     </Router>
   );

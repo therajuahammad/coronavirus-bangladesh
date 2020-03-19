@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import axios from 'axios'
 
 const Coronavirus = ()=>{
 
@@ -6,13 +7,13 @@ const Coronavirus = ()=>{
   
     useEffect(()=>{
       async function fetchData(){
-        let data = await fetch("https://covid19.mathdro.id/api/countries/BD").then(res=> res.json()).catch(err=>console.log(err))
+        let res = await axios.get("https://covid19.mathdro.id/api/countries/BD");
   
-        setStats(data);
+        setStats(res.data);
       }
   
       fetchData();
-    },[])
+    },[]);
   
     if(!stats){
       return (
