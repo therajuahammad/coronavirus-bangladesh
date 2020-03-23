@@ -55,7 +55,7 @@ const Coronavirus = ()=>{
                             <div className="col-sm-6 col-lg-4">
                                 <div className="stats-block">
                                     <h3>{stats.countrydata[0].total_deaths.toLocaleString("bn-BD")}</h3>
-                                    <h5>মারা গিয়েছে</h5>
+                                    <h5>সর্বমোট মৃত্যু হয়েছে</h5>
                                 </div>
                             </div>
 
@@ -76,7 +76,7 @@ const Coronavirus = ()=>{
                             <div className="col-sm-6 col-lg-4">
                                 <div className="stats-block">
                                     <h3>{stats.countrydata[0].total_new_deaths_today.toLocaleString("bn-BD")}</h3>
-                                    <h5>আজকে মারা গিয়েছে</h5>
+                                    <h5>আজকে মৃত্যু হয়েছে</h5>
                                 </div>
                             </div>
 
