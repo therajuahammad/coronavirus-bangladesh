@@ -2,23 +2,16 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios'
 
 const Coronavirus = ()=>{
+    const BASE_URL = "https://corona.lmao.ninja/v2/";
 
     const [stats, setStats] = useState();
-  
+
     useEffect(()=>{
-      async function fetchData(){
-        let res = await axios.get("https://corona.lmao.ninja/countries/BD",{
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
-        });
-  
-        setStats(res.data);
-      }
-  
-      fetchData();
+      axios.get(BASE_URL + 'countries/BD')
+      .then(res => setStats(res.data))
+      .catch(err=>console.log(err))
     },[]);
-  
+
     if(!stats){
       return (
         <div className="App">
@@ -37,7 +30,7 @@ const Coronavirus = ()=>{
             <div className="container">
                 <div className="row mb-5">
                     <div className="col-12">
-                    <img width='100' src={'https://bestanimations.com/Flags/Asia/bangladesh/bangladesh-flag-waving-gif-animation-19.gif'} alt="BD"/>
+                    <img width='100' src={stats.countryInfo.flag} alt="BD"/>
                         <h2 className="mt-3">
                           করোনা ভাইরাস
                           <span style={{color:"#ff5252"}}> লাইভ </span>
