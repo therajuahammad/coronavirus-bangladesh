@@ -2,9 +2,15 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios'
 
 const Coronavirus = ()=>{
-    const BASE_URL = "https://corona.lmao.ninja/v2/";
+    const BASE_URL = "https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/v2/";
 
     const [stats, setStats] = useState();
+
+    const getLastUpdatedTime = (compareTime) => {
+	    let diff = (new Date(compareTime).getTime() - new Date().getTime()) / 1000;
+	     diff /= (60);
+	    return Math.abs(Math.round(diff));
+	}
 
     useEffect(()=>{
       axios.get(BASE_URL + 'countries/BD')
@@ -36,7 +42,7 @@ const Coronavirus = ()=>{
                           <span style={{color:"#ff5252"}}> লাইভ </span>
                           আপডেট (বাংলাদেশ)
                         </h2>
-                        <h6>সর্বশেষ আপডেটঃ {new Date(stats.updated).toUTCString()}</h6>
+                        <h5>সর্বশেষ আপডেট <b>{getLastUpdatedTime(stats.updated).toLocaleString("bn-BD")}</b> মিনিট আগে</h5>
                     </div>
                 </div>
 
