@@ -1,8 +1,8 @@
-import React,{useEffect,useState} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Coronavirus = ()=>{
-    const BASE_URL = "https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/v2/";
+    const BASE_URL = "https://disease.sh/v3/covid-19/";
 
     const [stats, setStats] = useState();
 
@@ -98,7 +98,7 @@ const Coronavirus = ()=>{
                     <div className="col-12">
                       <p className="mt-5">
                         Made with <span style={{color:"red"}}>❤</span><span> By </span>
-                         <a href="https://github.com/rajuahammadfans" target="_blank" rel="noopener noreferrer">
+                         <a href="https://github.com/therajuahammad" target="_blank" rel="noopener noreferrer">
                           Raju Ahammad.
                           </a>
                       </p>
